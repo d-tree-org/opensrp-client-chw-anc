@@ -61,6 +61,20 @@
             android:textSize="@dimen/register_list_desc_size"
             android:textStyle="bold" />
 
+        <org.smartregister.view.customcontrols.CustomFontTextView
+            android:id="@+id/has_referral"
+            style="@style/CustomFontTextViewStyle.ClientList.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:visibility="gone"
+            android:paddingTop="0dp"
+            android:text="Has Referral"
+            android:textColor="@color/alert_urgent_red"
+            android:textSize="@dimen/register_list_desc_size"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
     <LinearLayout

@@ -198,6 +198,7 @@ public class PncRegisterProvider implements RecyclerViewProvider<PncRegisterProv
     public class RegisterViewHolder extends RecyclerView.ViewHolder {
         public TextView patientNameAndAge;
         public TextView villageTown;
+        public TextView textViewHasReferral;
         public TextView pncDay;
         public Button dueButton;
         public android.view.View patientColumn;
@@ -212,6 +213,7 @@ public class PncRegisterProvider implements RecyclerViewProvider<PncRegisterProv
             pncDay = itemView.findViewById(R.id.pnc_period);
 
             villageTown = itemView.findViewById(org.smartregister.chw.opensrp_chw_anc.R.id.village_town);
+            textViewHasReferral = itemView.findViewById(R.id.has_referral);
             dueButton = itemView.findViewById(org.smartregister.chw.opensrp_chw_anc.R.id.due_button);
 
             patientColumn = itemView.findViewById(org.smartregister.chw.opensrp_chw_anc.R.id.patient_column);

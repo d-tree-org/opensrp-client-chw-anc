@@ -192,6 +192,7 @@ public class AncRegisterProvider implements RecyclerViewProvider<AncRegisterProv
         public TextView patientName;
         public TextView patientAge;
         public TextView villageTown;
+        public TextView textViewHasReferral;
         public Button dueButton;
         public View patientColumn;
 
@@ -205,6 +206,7 @@ public class AncRegisterProvider implements RecyclerViewProvider<AncRegisterProv
             patientAge = itemView.findViewById(R.id.age_and_period);
 
             villageTown = itemView.findViewById(R.id.village_town);
+            textViewHasReferral = itemView.findViewById(R.id.has_referral);
             dueButton = itemView.findViewById(R.id.due_button);
 
             patientColumn = itemView.findViewById(R.id.patient_column);
