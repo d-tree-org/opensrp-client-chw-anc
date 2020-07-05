@@ -90,7 +90,7 @@ public class AncRegisterProvider implements RecyclerViewProvider<AncRegisterProv
                     age,
                     context.getString(R.string.gestation_age_initial),
                     NCUtils.gestationAgeString(lmpString, context, false),
-                    context.getString(R.string.weeks)
+                    context.getString(R.string.gest_age_weeks)
             );
 
             viewHolder.patientAge.setText(dates);
