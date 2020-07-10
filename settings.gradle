@@ -1,1 +1,1 @@
-include ':sample', ':opensrp-chw-anc', ':opensrp-chw-pnc'
+include ':opensrp-chw-anc', ':opensrp-chw-pnc'
