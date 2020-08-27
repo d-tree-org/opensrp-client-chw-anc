@@ -7,4 +7,6 @@
     <string name="pnc_day_count">d</string>
     <string name="pnc_last_visit_text">Last visit {0}</string>
     <string name="pnc_visit_done">PNC day {0} visit done</string>
+
+    <string name="has_referral">Has Referral</string>
 </resources>
