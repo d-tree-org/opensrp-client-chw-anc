@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -57,6 +59,7 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
     protected String current_action;
     protected String confirmCloseTitle;
     protected String confirmCloseMessage;
+    private boolean isHomeVisitCompleted = true;
 
     public static void startMe(Activity activity, String baseEntityID, Boolean isEditMode) {
         Intent intent = new Intent(activity, BaseAncHomeVisitActivity.class);
@@ -163,7 +166,11 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
         if (v.getId() == R.id.close) {
             displayExitDialog(() -> close());
         } else if (v.getId() == R.id.customFontTextViewSubmit) {
-            submitVisit();
+            if (isHomeVisitCompleted) {
+                submitVisit();
+            } else {
+                Snackbar.make(findViewById(android.R.id.content), Html.fromHtml(getString(R.string.mandatory_action_instruction)), Snackbar.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -236,9 +243,9 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
             }
         }
 
-        int res_color = valid ? R.color.white : R.color.light_grey;
-        tvSubmit.setTextColor(getResources().getColor(res_color));
-        tvSubmit.setOnClickListener(valid ? this : null); // update listener to null
+        isHomeVisitCompleted = valid;
+        tvSubmit.setTextColor(valid ? getResources().getColor(R.color.white) : getResources().getColor(R.color.grey));
+        //tvSubmit.setOnClickListener(valid ? this : null); // update listener to null
 
         mAdapter.notifyDataSetChanged();
     }
