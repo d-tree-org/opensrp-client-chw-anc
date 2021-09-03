@@ -59,7 +59,6 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
     protected String current_action;
     protected String confirmCloseTitle;
     protected String confirmCloseMessage;
-    private boolean isHomeVisitCompleted = true;
 
     public static void startMe(Activity activity, String baseEntityID, Boolean isEditMode) {
         Intent intent = new Intent(activity, BaseAncHomeVisitActivity.class);
@@ -166,11 +165,7 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
         if (v.getId() == R.id.close) {
             displayExitDialog(() -> close());
         } else if (v.getId() == R.id.customFontTextViewSubmit) {
-            if (isHomeVisitCompleted) {
-                submitVisit();
-            } else {
-                Snackbar.make(findViewById(android.R.id.content), Html.fromHtml(getString(R.string.mandatory_action_instruction)), Snackbar.LENGTH_SHORT).show();
-            }
+            submitVisit();
         }
     }
 
@@ -243,9 +238,8 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
             }
         }
 
-        isHomeVisitCompleted = valid;
         tvSubmit.setTextColor(valid ? getResources().getColor(R.color.white) : getResources().getColor(R.color.grey));
-        //tvSubmit.setOnClickListener(valid ? this : null); // update listener to null
+        tvSubmit.setOnClickListener(valid ? this : v -> Snackbar.make(findViewById(android.R.id.content), Html.fromHtml(getString(R.string.mandatory_action_instruction)), Snackbar.LENGTH_SHORT).show()); // update listener to null
 
         mAdapter.notifyDataSetChanged();
     }
