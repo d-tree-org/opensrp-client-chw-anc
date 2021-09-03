@@ -112,6 +112,6 @@
     <string name="rubella_1">Rubella 1</string>
     <string name="rubella_2">Rubella 2</string>
     <string name="mena">Homa ya uti wa mgongo</string>
-    <string name="mandatory_action_instruction">Hauwezi kutuma, tembeleo halijakamilika. Hakikisha vitendo vyote vyenye alama (<![CDATA[<font color=#ff0000>*</font>]]>) vimekamilika.</string>
+    <string name="mandatory_action_instruction">Hakikisha unakamilisha hatua zote zenye alama <![CDATA[<font color=#ff0000>*</font>]]> kabla ya kutuma tembeleo.</string>
 
 </resources>

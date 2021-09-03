@@ -115,6 +115,6 @@
     <string name="mena">MenA</string>
 
     <string name="has_referral">Has Referral</string>
-    <string name="mandatory_action_instruction">You can not submit, the visit is not complete. You should complete all actions with an asterisk (<![CDATA[<font color=#ff0000>*</font>]]>).</string>
+    <string name="mandatory_action_instruction">Make sure you complete all fields marked with <![CDATA[<font color=#ff0000>*</font>]]> before you submit the visit.</string>
 
 </resources>
