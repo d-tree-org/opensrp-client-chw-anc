@@ -77,7 +77,7 @@ public class BaseAncHomeVisitAdapter extends RecyclerView.Adapter<BaseAncHomeVis
 
         String title = MessageFormat.format("{0}<i>{1}</i>",
                 ancHomeVisitAction.getTitle(),
-                ancHomeVisitAction.isOptional() ? " - " + context.getString(R.string.optional) : ""
+                ancHomeVisitAction.isOptional() ? " - " + context.getString(R.string.optional) : "<font color=red>*</font>"
         );
         holder.titleText.setText(Html.fromHtml(title));
         if (StringUtils.isNotBlank(ancHomeVisitAction.getSubTitle())) {

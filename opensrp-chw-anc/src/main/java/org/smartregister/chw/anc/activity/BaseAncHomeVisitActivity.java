@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -236,9 +238,8 @@ public class BaseAncHomeVisitActivity extends SecuredActivity implements BaseAnc
             }
         }
 
-        int res_color = valid ? R.color.white : R.color.light_grey;
-        tvSubmit.setTextColor(getResources().getColor(res_color));
-        tvSubmit.setOnClickListener(valid ? this : null); // update listener to null
+        tvSubmit.setTextColor(valid ? getResources().getColor(R.color.white) : getResources().getColor(R.color.grey));
+        tvSubmit.setOnClickListener(valid ? this : v -> Snackbar.make(findViewById(android.R.id.content), Html.fromHtml(getString(R.string.mandatory_action_instruction)), Snackbar.LENGTH_SHORT).show()); // update listener to null
 
         mAdapter.notifyDataSetChanged();
     }
