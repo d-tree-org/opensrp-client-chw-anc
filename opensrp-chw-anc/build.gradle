@@ -13,6 +13,7 @@ buildscript {
 apply plugin: 'jacoco'
 apply plugin: 'com.github.kt3k.coveralls'
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 jacoco {
     toolVersion = "0.8.0"
@@ -193,3 +194,4 @@ coveralls {
 }
 
 apply from: '../maven.gradle'
+apply from: '../github.gradle'
