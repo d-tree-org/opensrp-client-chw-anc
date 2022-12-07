@@ -15,7 +15,8 @@ local.properties
 classes/
 tmp/
 project.properties
-.DS_Store
+.DS_St
 .settings
 build/
 jacoco.exec
+/github.properties
