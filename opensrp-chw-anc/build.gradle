@@ -35,6 +35,7 @@ android {
         versionName project.VERSION_NAME
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        project.archivesBaseName = "opensrp-client-chw-anc"
     }
     buildTypes {
         release {
